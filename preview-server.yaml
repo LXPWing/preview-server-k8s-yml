@@ -148,7 +148,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: layotto-preview-server
-  namespace: layotto
   labels:
     app: preview-server
     version: latest
