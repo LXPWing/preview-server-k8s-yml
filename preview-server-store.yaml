@@ -23,8 +23,8 @@ spec:
           ports:
             - containerPort: 6379
 
-        # MiniIO
-        - name: preview-server-miniIO
+        # Minio
+        - name: preview-server-minio
           image: minio/minio
           command:
             - server /data --console-address ':9090'
