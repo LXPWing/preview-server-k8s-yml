@@ -150,8 +150,7 @@ metadata:
   name: layotto-preview-server
   namespace: layotto
   labels:
-    app: preview-server
-    version: latest
+    app: preview-server-deployment
 
 spec:
   selector:
@@ -159,6 +158,9 @@ spec:
       app: preview-server
   replicas: 1
   template:
+    metadata:
+      labels:
+        app: preview-server
     spec:
       containers:
         # Java preview server

@@ -4,8 +4,7 @@ metadata:
   name: preview-server-store
   namespace: layotto
   labels:
-    app: preview-server-store
-    version: latest
+    app: preview-server-store-deployment
 
 spec:
   selector:
@@ -13,6 +12,9 @@ spec:
       app: preview-server-store
   replicas: 1
   template:
+    metadata:
+      labels:
+        app: preview-server-store
     spec:
       containers:
         # Redis
