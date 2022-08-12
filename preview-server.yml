@@ -148,12 +148,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: layotto-preview-server
+  namespace: layotto
   labels:
     app: preview-server
     version: latest
 
 spec:
   selector:
+    matchLabels:
+      app: preview-server
   replicas: 1
   template:
     spec:
