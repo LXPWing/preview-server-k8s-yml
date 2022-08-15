@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: preview-server-store
-  namespace: layotto
   labels:
     app: preview-server-store-deployment
 
@@ -22,8 +21,7 @@ spec:
           image: redis:latest
           ports:
             - containerPort: 6379
-
-        # Minio
+        # MiniO
         - name: preview-server-minio
           image: minio/minio
           command:
