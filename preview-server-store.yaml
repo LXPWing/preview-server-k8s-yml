@@ -20,6 +20,7 @@ spec:
         # Redis
         - name: preview-server-redis
           image: redis:latest
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 6379
 #         # MiniO
