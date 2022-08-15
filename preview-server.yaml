@@ -164,11 +164,11 @@ spec:
     spec:
       containers:
         # Java preview server
-        - name: preview-server
-          image: layotto/preview_server
-          imagePullPolicy: IfNotPresent
-          ports:
-            - containerPort: 9080
+#         - name: preview-server
+#           image: layotto/preview_server
+#           imagePullPolicy: IfNotPresent
+#           ports:
+#             - containerPort: 9080
 
         - name: count
           image: busybox:1.28
