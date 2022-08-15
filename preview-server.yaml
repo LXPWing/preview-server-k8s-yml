@@ -165,7 +165,7 @@ spec:
       containers:
 #         # Java preview server
 #         - name: preview-server
-#           image: layotto/preview_server:latest
+#           image: layotto/preview_server
 #           ports:
 #             - containerPort: 9080
 
