@@ -22,16 +22,16 @@ spec:
           image: redis:latest
           ports:
             - containerPort: 6379
-        # MiniO
-        - name: preview-server-minio
-          image: minio/minio
-          command:
-            - server /data --console-address ':9090'
-          ports:
-            - containerPort: 9090
-            - containerPort: 9000
-          env:
-            - name:  MINIO_ROOT_USER
-              value: layotto
-            - name: MINIO_ROOT_PASSWORD
-              value: layotto_secret
+#         # MiniO
+#         - name: preview-server-minio
+#           image: minio/minio
+#           command:
+#             - server /data --console-address ':9090'
+#           ports:
+#             - containerPort: 9090
+#             - containerPort: 9000
+#           env:
+#             - name:  MINIO_ROOT_USER
+#               value: layotto
+#             - name: MINIO_ROOT_PASSWORD
+#               value: layotto_secret
