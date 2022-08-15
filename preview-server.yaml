@@ -148,7 +148,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: layotto-preview-server
-  namespace: layotto
   labels:
     app: preview-server-deployment
 
@@ -193,3 +192,24 @@ spec:
               - key: config.json
                 path: config.json
 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: preview-store
+  labels:
+    app: preview-store
+    service: preview-store
+spec:
+  ports:
+    - name: layotto-preview-store-redis
+      port: 6379
+      targetPort: 6379
+    - name: layotto-preview-store-minio
+      port: 9090
+      targetPort: 9090
+    - name: layotto-preview-store-minio-ui
+      port: 9000
+      targetPort: 9000
+  selector:
+    app: preview-server-store
