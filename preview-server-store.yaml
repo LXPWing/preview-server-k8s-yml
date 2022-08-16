@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: preview-server-store
-  namespace: layotto
+#   namespace: layotto
   labels:
     app: preview-server-store-deployment
 
