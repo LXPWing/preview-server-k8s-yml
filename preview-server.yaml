@@ -170,31 +170,31 @@ spec:
           ports:
             - containerPort: 9080
 
-#         - name: count
-#           image: busybox:1.28
-#           imagePullPolicy: IfNotPresent
-#           args: [ /bin/sh, -c,
-#                     'i=0; while true; do echo "$i: $(date)"; i=$((i+1)); sleep 1; done' ]
-#         # Layotto
-#         - name: layotto-runtime
-#           image: layotto/layotto:latest
-#           imagePullPolicy: IfNotPresent
-#           command: [ "/runtime/layotto", "start" ]
-#           args: [ "-c", "/runtime/configs/config.json" ]
-#           ports:
-#             - containerPort: 34904
-#           volumeMounts:
-#             - name: runtime-config
-#               mountPath: /runtime/configs
-#               readOnly: false
+        - name: count
+          image: busybox:1.28
+          imagePullPolicy: IfNotPresent
+          args: [ /bin/sh, -c,
+                    'i=0; while true; do echo "$i: $(date)"; i=$((i+1)); sleep 1; done' ]
+        # Layotto
+        - name: layotto-runtime
+          image: layotto/layotto:latest
+          imagePullPolicy: IfNotPresent
+          command: [ "/runtime/layotto", "start" ]
+          args: [ "-c", "/runtime/configs/config.json" ]
+          ports:
+            - containerPort: 34904
+          volumeMounts:
+            - name: runtime-config
+              mountPath: /runtime/configs
+              readOnly: false
 
-#       volumes:
-#         - name: runtime-config
-#           configMap:
-#             name: layotto-runtime-config
-#             items:
-#               - key: config.json
-#                 path: config.json
+      volumes:
+        - name: runtime-config
+          configMap:
+            name: layotto-runtime-config
+            items:
+              - key: config.json
+                path: config.json
 
 ---
 # apiVersion: v1
