@@ -165,16 +165,10 @@ spec:
       containers:
         # Java preview server
         - name: preview-server
-          image: layotto/preview_server
+          image: layotto/preview_server:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9080
-
-        - name: count
-          image: busybox:1.28
-          imagePullPolicy: IfNotPresent
-          args: [ /bin/sh, -c,
-                    'i=0; while true; do echo "$i: $(date)"; i=$((i+1)); sleep 1; done' ]
         # Layotto
         - name: layotto-runtime
           image: layotto/layotto:latest
